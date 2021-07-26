@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #id {
+            width: 1000px;
+            height: 1000px;
+            border: 1px solid chocolate;
+        }
+
+        .box {
+            border: 1px solid chocolate;
+        }
+
+        img { height: 250px;}
+
+    </style>
+
+</head>
+<body>
+    
+    <form name="data">
+
+        <p>Кол-во блоков: <input type="text" name="b" value="10" size="3"></p>
+        <p>Кол-во картинок: <input type="text" name="p" value="6" size="3"></p>
+        <p><input type="button" value="Создать" onclick="func();"></p>
+
+    </form>
+
+    <div id="cont">
+
+        <!-- <div class="box">
+            <img src="images/1.jpg" alt="">
+            <img src="images/2.jpg" alt="">
+
+        </div>
+
+        <div class="box">
+            <img src="images/1.jpg" alt="">
+            <img src="images/2.jpg" alt="">
+
+        </div> -->
+
+    </div>
+
+
+<script>
+
+    function func() {
+        let b = data.b.value; 
+        let p = data.p.value;
+
+        if (p>=1 && p<=11) {
+        // console.log(b,p);
+        box = ''; 
+        for (i=1; i<=b; i++) {
+            pic='';
+            for(j=1; j<=p; j++) {
+                pic += `
+                <img src="images/${j}.jpg" alt="">
+                `;
+            }
+
+        box += `<div class="box">${pic}</div>`;  
+
+        }
+
+
+        cont.innerHTML = box;
+    } //if
+        else alert("Много картинок (1-11)");
+    }
+
+
+</script>
+    
+</body>
+</html>
